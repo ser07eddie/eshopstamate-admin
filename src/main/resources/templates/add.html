@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <ul class="nav justify-content-end shadow-lg p-3 mb-5 bg-white rounded">
+        <li class="nav-item">
+            <a class="nav-link" href="products">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container">
+    <form action="/create-action">
+
+        <input th:value="${product.id}" name="id" hidden>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input th:value="${product.name}" name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input th:value="${product.description}" name="description" type="text" class="form-control" id="description">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input th:value="${product.price}" name="price" type="number" class="form-control" id="price">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input th:value="${product.quantity} " name="quantity" type="number" class="form-control" id="quantity">
+        </div>
+        <div class="form-group">
+            <label for="photo">Photo</label>
+            <input th:value="${product.photo}" name="photo" type="text" class="form-control" id="photo">
+        </div>
+        <div class="form-group">
+            <label for="catId">Category Id</label>
+            <input th:value="${product.catId}" name="catId" type="number" class="form-control" id="catId">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

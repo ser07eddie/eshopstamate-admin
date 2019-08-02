@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin-Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <ul class="nav justify-content-end shadow-lg p-3 mb-5 bg-white rounded">
+        <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
+        </li>
+    </ul>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Category Id</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="p:${products}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.description}"></td>
+            <td th:text="${p.price}"></td>
+            <td th:text="${p.quantity}"></td>
+            <td th:text="${p.photo}"></td>
+            <td th:text="${p.catId}"></td>
+            <td>
+                <a th:href="@{/product?id=} + ${p.id}">Update</a>
+                <a th:href="@{/delete-action?id=} + ${p.id}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/product">Add</a>
+
+</body>
+</html>
